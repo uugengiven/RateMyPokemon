@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetInput</title>
+</head>
+<body>
+    <div style="display:flex;justify-content:center;align-items:center;height: 100vh;">
+        <div>
+            <form action="/example/afterinput" method="POST">
+                name: <input type="text" name="Name" /><br />
+                description: <input type="text" name="Description" /><br />
+                rating: <input type="number" name="Rating" /><br />
+                picture: <input type="text" name="Picture" /><br />
+                <input type="submit" />
+            </form>
+            <a href="http://www.google.com">Go to google instead</a>
+            @Html.ActionLink("Go to the list of pokemon", "index", "pokemans")
+        </div>
+    </div>
+</body>
+</html>

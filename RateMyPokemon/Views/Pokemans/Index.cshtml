@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RateMyPokemon.Models.Pokemon>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            The Picture
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var pokemon in Model) {
+    <tr>
+        <td>
+            @pokemon.Name
+        </td>
+        <td>
+            @pokemon.Description
+        </td>
+        <td>
+            @pokemon.Rating
+        </td>
+        <td>
+            <img src="@pokemon.Picture" width="100" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=pokemon.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=pokemon.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=pokemon.Id })
+        </td>
+    </tr>
+}
+
+</table>
